@@ -3,3 +3,12 @@
   color: rgb(255, 255, 255);
 
 }
+ul{
+  float:left;
+  background-color: black;
+  width: 300px;
+  position: relative;
+  height: 600px;
+  list-style:none
+}
+

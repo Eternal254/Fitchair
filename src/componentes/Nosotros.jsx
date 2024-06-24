@@ -4,10 +4,7 @@ const Nosotros = () => (
     <div>
         <h1> Nosotros somos</h1>
 
-        <div>
-         <p</p>
-
-        </div>
+       
         
     
 

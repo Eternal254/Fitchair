@@ -5,7 +5,6 @@ import "../layout.css";
 const Layout = () => {
     return (
         < div >
-        <nav>
             <ul>
                 <li>
                     <Link to="/inicio">Inicio</Link>
@@ -17,9 +16,7 @@ const Layout = () => {
                     <Link to="/login">Login</Link>
                 </li>
             </ul>
-        </nav>
-         <hr />
-         <Outlet />
+            <Outlet />
         </div >
     )
 

@@ -1,0 +1,12 @@
+a{
+    color: white;
+    background-color: black;
+    position: relative;
+    left: 200px;
+    top: 350px;
+}
+li{
+    position: relative;
+    right: 100px;
+    top: -150px;
+}
