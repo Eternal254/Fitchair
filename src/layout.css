@@ -5,9 +5,11 @@ a{
     left: 200px;
     top: 350px;
 }
-li{
+li {
     position: relative;
     right: 100px;
-    top: 0px;
-    
+    top: -100px;
+    margin-bottom: 100px; 
+
 }
+

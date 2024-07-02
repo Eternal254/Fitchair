@@ -5,7 +5,7 @@
 }
 ul{
   float:left;
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.5); /* Negro con 50% de transparencia */
   width: 300px;
   position: relative;
   height: 750px;
