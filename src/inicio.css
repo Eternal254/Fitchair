@@ -1,23 +1,35 @@
 .titulo{
-    color: white;
+    color: rgb(0, 0, 0);
     font-family: fantasy;
     font-size: 50px;
     text-align: center;
     position: relative;
-    top: 250px;
+    bottom: 130px;
     right: 400px;
+
     
 }
 .texto{
     width: 90%;
-    background-color: black;
     font-family:Arial, Helvetica, sans-serif;
-    color: rgb(255, 255, 255);
-    font-size: 25px;
-    position: relative;
-    top: 300px;
-    left: 100px;    
-    
-    
+    color: rgb(0, 0, 0);
+    font-size: 25px;    
 }
+.inicio{
+    font-size: 50px;
+    float:left;
+    width: 1000px;
+    position: relative;
+    height: -500px;
+    top: 300px;
+    left: 100PX;
+    }
+.fondo{
+    background-color: rgba(33, 7, 148, 0.2); 
+    border-radius: 15px;
+    height: 300px;
+    padding-top: 75px;
+    margin-top: -75px;
+    width: 900px;
 
+}
