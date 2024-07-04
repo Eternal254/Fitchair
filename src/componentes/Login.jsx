@@ -75,6 +75,9 @@ const Login = () => {
     return (
         <div>
             <center>
+                
+            </center>
+            <center>
             <h1 className='fit'>FitChair</h1>
             </center>
                 

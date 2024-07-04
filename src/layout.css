@@ -1,15 +1,36 @@
-a{
+a {
     color: white;
-    background-color: black;
     position: relative;
-    left: 200px;
-    top: 350px;
+    left: 150px;
+    top: 270px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;   
+    text-decoration: none; /* Opcional: para quitar el subrayado */
 }
+
+a:hover {
+    color: rgb(0, 0, 0); /* Cambia 'yellow' por el color que desees */
+}
+
+a::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background-color: rgba(38, 0, 255, 0.5); /* Cambia el color y la opacidad del cuadro según prefieras */
+    transition: height 0.3s ease;
+    
+}
+
+a:hover::after {
+    height: 20px; /* Ajusta la altura del cuadro según prefieras */
+}
+
 li {
     position: relative;
     right: 100px;
     top: -100px;
-    margin-bottom: 100px; 
-
+    margin-bottom: 100px;
 }
 
