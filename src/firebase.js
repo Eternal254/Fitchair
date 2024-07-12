@@ -1,22 +1,19 @@
-// Import the functions you need from the SDKs you need
+// firebase.js
 import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+import { getFirestore, collection, getDocs } from "firebase/firestore";
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyBZtnPgL7qBrhBsXjhU4lU5G-5Z-XBXShg",
-  authDomain: "fitchair-64e26.firebaseapp.com",
-  databaseURL: "https://fitchair-64e26-default-rtdb.firebaseio.com",
-  projectId: "fitchair-64e26",
-  storageBucket: "fitchair-64e26.appspot.com",
-  messagingSenderId: "1097177597587",
-  appId: "1:1097177597587:web:eeaf1aae3b4297248a6f66",
-  measurementId: "G-EJJWK7H0ML"
+  apiKey: "AIzaSyBfpUToP-jJfRM3RFJwen7hf5LmR6ymDBI",
+  authDomain: "fitchair1.firebaseapp.com",
+  databaseURL: "https://fitchair1-default-rtdb.firebaseio.com",
+  projectId: "fitchair1",
+  storageBucket: "fitchair1.appspot.com",
+  messagingSenderId: "5764322017",
+  appId: "1:5764322017:web:d5fb5fc4fcfa84bd7b9da0",
+  measurementId: "G-9R8HRDHE6V"
 };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+const db = getFirestore(app);
+
+export { db, collection, getDocs };

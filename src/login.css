@@ -7,11 +7,12 @@
 }
 
 body{
-    background-image: url("../src/imagenes/bg2.jpg");
+    background-image: url("../src/imagenes/3431361.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
+    
 }
 
 main{

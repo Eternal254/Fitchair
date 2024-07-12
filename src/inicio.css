@@ -25,11 +25,17 @@
     left: 100PX;
     }
 .fondo{
-    background-color: rgba(33, 7, 148, 0.2); 
+    background-color: rgba(225, 223, 231, 0.5); 
     border-radius: 15px;
     height: 300px;
     padding-top: 75px;
     margin-top: -75px;
     width: 900px;
-
+}
+.img{
+    position: relative;
+    bottom: 250px;
+    color: white;
+    background-color: white;
+    
 }
