@@ -9,28 +9,16 @@
 
     
 }
-.texto{
-    width: 90%;
-    font-family:Arial, Helvetica, sans-serif;
+.texto {
+    width: 100%; /* Cambiado para que ocupe el 100% del contenedor */
+    font-family: Arial, Helvetica, sans-serif;
     color: rgb(0, 0, 0);
-    font-size: 25px;    
+    font-size: 1.25rem; /* Ajustado para que sea responsivo */
 }
-.inicio{
-    font-size: 50px;
-    float:left;
-    width: 1000px;
-    position: relative;
-    height: -500px;
-    top: 300px;
-    left: 100PX;
-    }
-.fondo{
+.fondo {
     background-color: rgba(225, 223, 231, 0.5); 
     border-radius: 15px;
-    height: 300px;
-    padding-top: 75px;
-    margin-top: -75px;
-    width: 900px;
+    padding: 1.5rem; /* Añade un poco de padding */
 }
 .img{
     position: relative;
@@ -38,4 +26,10 @@
     color: white;
     background-color: white;
     
+}
+
+
+.img-fluid {
+    max-width: 100%;
+    height: auto;
 }

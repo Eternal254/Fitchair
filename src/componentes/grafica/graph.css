@@ -1,0 +1,7 @@
+.LineChart{
+  background-color: aliceblue;
+  width: 700px;
+  max-width: calc(100% - 20px);
+  margin: 0 auto;
+  padding: 0 10px;
+}
