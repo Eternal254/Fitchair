@@ -3,9 +3,7 @@ import { getFirestore } from 'firebase/firestore';
 import { getStorage } from 'firebase/storage';
 import { getAnalytics } from 'firebase/analytics';
 import { getAuth } from 'firebase/auth';
-import { collection, getDocs } from 'firebase/firestore';
 import { getDatabase } from 'firebase/database';
-
 
 import 'firebase/database';
 
@@ -21,17 +19,16 @@ const firebaseConfig = {
     measurementId: "G-DQ2G3YW64Y"
 };
 
-
 const app = initializeApp(firebaseConfig);
-const database = getDatabase(app); 
-const firestore = getFirestore(app); 
-const storage = getStorage(app); 
-const analytics = getAnalytics(app); 
-const auth = getAuth(app); 
+const database = getDatabase(app);
+const firestore = getFirestore(app);
+const storage = getStorage(app);
+const analytics = getAnalytics(app);
+const auth = getAuth(app);
 
+console.log("Conexion establecida");
 
-export { app, database, firestore, storage, analytics, auth};
+// Ya no le muevan a esta madre, todo funciona correctamente
 
-console.log("Si conetca esta shit");
-
+export { app, database, firestore, storage, analytics, auth };
 export default firebaseConfig;
