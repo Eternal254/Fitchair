@@ -1,5 +1,29 @@
 import React, { useEffect } from 'react';
-import "../login.css";
+import { initializeApp } from 'firebase/app';
+import { getAuth, signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
+import firebaseConfig from '../firebase/firebaseConfig';
+import '../login.css';
+
+const provider = new GoogleAuthProvider();
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+
+function call_login_google(e) {
+    e.preventDefault(); // Previene el comportamiento por defecto del botón
+
+    signInWithPopup(auth, provider)
+        .then((result) => {
+            const credential = GoogleAuthProvider.credentialFromResult(result);
+            const token = credential.accessToken;
+            const user = result.user;
+        })
+        .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            const email = error.customData.email;
+            const credential = GoogleAuthProvider.credentialFromError(error);
+        });
+}
 
 const Login = () => {
     useEffect(() => {
@@ -64,7 +88,6 @@ const Login = () => {
 
         ajustarInterfaz();
 
-        // Cleanup para remover event listeners si el componente se desmonta
         return () => {
             btnIniciarSesion.removeEventListener("click", iniciarSesion);
             btnRegistrarse.removeEventListener("click", register);
@@ -92,18 +115,20 @@ const Login = () => {
                     <div className="contenedor__login-register">
                         <form action="" className="formulario__login">
                             <h2>Iniciar Sesión</h2>
-                            <input type="text" placeholder="Correo Electronico" />
+                            <input type="text" placeholder="Correo Electrónico" />
                             <input type="password" placeholder="Contraseña" />
                             <button>Entrar</button>
+                            <button className='button-google' onClick={call_login_google}>Entrar con Google</button>
                         </form>
 
                         <form action="" className="formulario__register">
                             <h2>Regístrarse</h2>
                             <input type="text" placeholder="Nombre completo" />
-                            <input type="text" placeholder="Correo Electronico" />
+                            <input type="text" placeholder="Correo Electrónico" />
                             <input type="text" placeholder="Usuario" />
                             <input type="password" placeholder="Contraseña" />
                             <button>Regístrarse</button>
+                            <button className='button-google' onClick={call_login_google}>Entrar con Google</button>
                         </form>
                     </div>
                 </div>
