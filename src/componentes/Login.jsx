@@ -74,10 +74,6 @@ const Login = () => {
 
     return (
         <div>
-            <center>
-                <img src="../src/imagenes/titilo.jpg" alt="Nombre de la pagina" />                  
-            </center>
-
             <main>
                 <div className="contenedor__todo">
                     <div className="caja__trasera">

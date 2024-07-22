@@ -1,67 +1,42 @@
-/*
-
-import React, { useState, useEffect } from 'react';
-import { ref, onValue, getDatabase } from 'firebase/database';
-import { app } from '../App'; 
-
-const db = getDatabase(app);
+import React, { useEffect, useState } from "react";
+import { onValue, ref } from "firebase/database";
+import { database } from "../firebase/firebaseConfig"; 
 
 const DbTest = () => {
-  const [data, setData] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const [usuarios, setUsuarios] = useState([]);
 
   useEffect(() => {
-    const fetchData = async () => {
-      const dataRef = ref(db, 'Usuarios');
-      try {
-        onValue(dataRef, (snapshot) => {
-          const items = snapshot.val();
-          const formattedItems = items ? Object.keys(items).map(key => ({ id: key, ...items[key] })) : [];
-          setData(formattedItems);
-          setLoading(false);
-        });
-      } catch (error) {
-        setError(error.message);
-      }
-    };
+    const usersRef = ref(database, 'Usuarios');
 
-    fetchData();
+    onValue(usersRef, (snapshot) => {
+      const data = snapshot.val();
+      const usuariosArray = [];
+      for (let id in data) {
+        usuariosArray.push({ id, ...data[id] });
+      }
+      setUsuarios(usuariosArray);
+    });
   }, []);
 
-  if (loading) {
-    return <p>Cargando...</p>;
-  }
-
-  if (error) {
-    return <p>Error: {error}</p>;
-  }
-
   return (
-    <table>
-      <thead>
-        <tr>
-          <th>ID</th>
-          <th>Nombre</th>
-          <th>Apellido</th>
-          <th>Correo</th>
-          <th>Peso</th>
-        </tr>
-      </thead>
-      <tbody>
-        {data.map(item => (
-          <tr key={item.id}>
-            <td>{item.id}</td>
-            <td>{item.Nombre}</td>
-            <td>{item.Apellido}</td>
-            <td>{item.Correo}</td>
-            <td>{item.Peso}</td>
-          </tr>
+    <div>
+      <h1>Usuarios</h1>
+      <ul>
+        {usuarios.map((usuario) => (
+          <li key={usuario.id}>
+            <p>Nombre: {usuario.Nombre}</p>
+            <p>Apellido: {usuario.Apellido}</p>
+            <p>Correo: {usuario.Correo}</p>
+            <p>Peso: {usuario.Peso}</p>
+          </li>
         ))}
-      </tbody>
-    </table>
+      </ul>
+    </div>
   );
 };
 
+//Esta funcionando extrañamente, muestra la info de todos los usuarios
+// Falta meter una comprobacion para que requiera de login y solo muestre 
+// Los datos del usuario logeado en base al ID
+
 export default DbTest;
-*/
