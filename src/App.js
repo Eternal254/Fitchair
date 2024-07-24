@@ -11,6 +11,7 @@ import firebaseConfig from './firebase/firebaseConfig';
 import Grafica from './componentes/grafica/Grafica';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useLocation } from 'react-router-dom';
+import { AuthProvider } from './componentes/auth/AuthContext';
 
 let initializedApp;
 
@@ -20,6 +21,7 @@ function App() {
   const isHomePage = location.pathname === '/';
 
   return (
+    <AuthProvider>
     <div className='elementos'>
       <Routes>
         <Route path='/' element={<Layout />}>
@@ -32,6 +34,7 @@ function App() {
       </Routes>
       {isHomePage && <Inicio />}
     </div>
+    </AuthProvider>
   );
 }
 // Por defecto ahora no existe una ruta "inicio", en su lugar el boton inicio redirecciona 
