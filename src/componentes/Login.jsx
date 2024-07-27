@@ -8,17 +8,18 @@ import { initializeApp } from 'firebase/app';
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
-const handleLogout = async () => {
+export const handleLogout = async () => {
     try {
         await signOut(auth);
         window.location.href = '/';
+        {console.log('Sesion cerrada')}
     } catch (error) {
         console.error('Error al cerrar sesión:', error);
     }
 };
 
 
-const Login = () => {
+export const Login = () => {
     const [user, setUser] = useState(null);
 
     useEffect(() => {
@@ -111,7 +112,8 @@ const Login = () => {
                     <h2>Bienvenido, {user.displayName}</h2>
                     <p>Estás autenticado</p>
                     <button onClick={handleLogout}>Cerrar Sesión</button>
-                    {/* Aquí puedes mostrar el contenido exclusivo para usuarios autenticados */}
+                    {console.log('Sesion iniciada')}
+                    {console.log("User ID:", user.uid)}
                 </div>
             ) : (
                 <main>
