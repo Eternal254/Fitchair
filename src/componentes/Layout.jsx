@@ -23,7 +23,7 @@ const Layout = () => {
               <Link className="nav-link" to="/mytest">TestDB</Link>
               </li>
               <li class="nav-item">
-              <Link className="nav-link" to="/graph">Grafica</Link>
+              <Link className="nav-link" to="/graph">Grafica </Link>
               </li>
               <li class="nav-item">
               <button  className="nav-link" onClick={handleLogout}>Cerrar Sesión</button>
