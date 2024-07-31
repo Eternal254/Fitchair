@@ -8,57 +8,55 @@ const Layout = () => {
 
   return (
     <div>
-        {user ? (
-            <div>
-            <nav class="navbar navbar-expand-sm bg-dark justify-content-center">
-      
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <Link className="nav-link" to="/">Inicio</Link>
+      {user ? (
+        <div>
+          <nav className="navbar navbar-expand-sm bg-dark justify-content-center">
+            <ul className="navbar-nav">
+              <li className="nav-item">
+                <Link className="nav-link menu" to="/">Inicio</Link>
               </li>
-              <li class="nav-item">
-              <Link className="nav-link" to="/nosotros">Nosotros</Link>
+              <li className="nav-item">
+                <Link className="nav-link menu" to="/nosotros">Nosotros</Link>
               </li>
-              <li class="nav-item">
-              <Link className="nav-link" to="/mytest">TestDB</Link>
+              <li className="nav-item">
+                <Link className="nav-link menu" to="/mytest">TestDB</Link>
               </li>
-              <li class="nav-item">
-              <Link className="nav-link" to="/graph">Grafica </Link>
+              <li className="nav-item">
+                <Link className="nav-link menu" to="/graph">Grafica</Link>
               </li>
-              <li class="nav-item">
-              <button  className="nav-link" onClick={handleLogout}>Cerrar Sesión</button>
+              <li className="nav-item">
+                <button className="nav-link menu" onClick={handleLogout}>Cerrar Sesión</button>
               </li>
             </ul>
-            </nav>
+          </nav>
           <Outlet />
-          </div>
-        ) : (
-          <div>
-      <nav class="navbar navbar-expand-sm bg-dark justify-content-center">
-
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <Link className="nav-link" to="/">Inicio</Link>
-        </li>
-        <li class="nav-item">
-        <Link className="nav-link" to="/nosotros">Nosotros</Link>
-        </li>
-        <li class="nav-item">
-        <Link className="nav-link" to="/mytest">TestDB</Link>
-        </li>
-        <li class="nav-item">
-        <Link className="nav-link" to="/graph">Grafica marrana</Link>
-        </li>
-        <li class="nav-item">
-        <Link className="nav-link" to="/login">Login</Link>
-        </li>
-      </ul>
-      </nav>
-    <Outlet />
+        </div>
+      ) : (
+        <div>
+          <nav className="navbar navbar-expand-sm bg-dark justify-content-center">
+            <ul className="navbar-nav">
+              <li className="nav-item">
+                <Link className="nav-link menu" to="/">Inicio</Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link menu" to="/nosotros">Nosotros</Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link menu" to="/mytest">TestDB</Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link menu" to="/graph">Grafica marrana</Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link menu" to="/login">Login</Link>
+              </li>
+            </ul>
+          </nav>
+          <Outlet />
+        </div>
+      )}
     </div>
-        )}
-    </div>
-);
+  );
 }
 
 export default Layout;
