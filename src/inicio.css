@@ -1,25 +1,56 @@
-
 .texto {
-    width: 100%; /* Cambiado para que ocupe el 100% del contenedor */
+    width: 100%; /* Ocupa el 100% del contenedor */
     font-family: Arial, Helvetica, sans-serif;
     color: rgb(0, 0, 0);
     font-size: 1.25rem; /* Ajustado para que sea responsivo */
+    
 }
+
 .fondo {
     background-color: rgba(254, 254, 255, 0.5); 
     border-radius: 15px;
     padding: 1.5rem; /* Añade un poco de padding */
-}
-.img{
+    max-width: 90%; /* Asegura que el ancho no exceda el 90% del contenedor */
+    margin: 0 auto; /* Centra el contenedor horizontalmente */
     position: relative;
-    bottom: 250px;
-    color: white;
-    background-color: white;
-    
+    top: 0; /* Ajustado para que no se desplace fuera de vista */
+    left: -80px; /* Mueve el contenedor hacia la izquierda */
+    bottom: 0; /* Ajustado para que no se desplace fuera de vista */
 }
 
+.image-container {
+    position: relative;
+    margin: 0 auto; /* Centra el contenedor horizontalmente */
+    text-align: center; /* Centra la imagen dentro del contenedor */
+    margin-left: -180px; /* Mueve el contenedor de la imagen hacia la izquierda */
+}
 
-.img-fluid {
-    max-width: 100%;
-    height: auto;
+.image-container img {
+    width: 100%;   /* Ajusta el ancho al 100% del contenedor */
+    max-width: 300px; /* Limita el ancho máximo de la imagen */
+    height: auto;   /* Mantiene la proporción de la imagen */
+}
+
+/* Media queries para adaptar el diseño en diferentes tamaños de pantalla */
+@media (max-width: 1200px) {
+    .fondo {
+        width: 80%; /* Ajusta el ancho para pantallas más pequeñas */
+        left: -80px; /* Mueve el contenedor hacia la izquierda en pantallas más pequeñas */
+    }
+}
+
+@media (max-width: 768px) {
+    .fondo {
+        width: 90%; /* Ajusta aún más el ancho para pantallas móviles */
+        left: -80px; /* Mueve el contenedor hacia la izquierda en pantallas móviles */
+    }
+    
+    .texto {
+        font-size: 1rem; /* Reduce el tamaño de fuente en pantallas más pequeñas */
+        margin-left: -80px; /* Mueve el texto hacia la izquierda en pantallas más pequeñas */
+    }
+    
+    .image-container img {
+        max-width: 100%; /* Asegura que la imagen no exceda el ancho del contenedor */
+    }
 }

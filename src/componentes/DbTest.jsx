@@ -37,7 +37,7 @@ const DbTest = () => {
             </ul>
           </div>
         ) : (
-            <h1>Logeate puta</h1>
+            <h1></h1>
         )}
     </div>
 );
