@@ -25,6 +25,12 @@ const Layout = () => {
           {user ? (
             <>
               <li className="nav-item">
+                <Link className="nav-link menu" to="/">Inicio</Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link menu" to="Nosotros">Nosotros</Link>
+              </li>
+              <li className="nav-item">
                 <Link className="nav-link menu" to="/mytest">TestDB</Link>
               </li>
               <li className="nav-item">

@@ -4,45 +4,55 @@ import { database } from "../firebase/firebaseConfig";
 import { useAuth } from "./auth/AuthContext";
 
 const DbTest = () => {
-  const [usuarios, setUsuarios] = useState([]);
+  const [usuarios, setUsuarios] = useState({});
   const user = useAuth();
 
   useEffect(() => {
-    const usersRef = ref(database, 'Usuarios');
+    const usersRef = ref(database, 'Usarios');
 
     onValue(usersRef, (snapshot) => {
       const data = snapshot.val();
-      const usuariosArray = [];
-      for (let id in data) {
-        usuariosArray.push({ id, ...data[id] });
-      }
-      setUsuarios(usuariosArray);
+      setUsuarios(data);
     });
   }, []);
 
+  const renderPesoTabla = (pesos) => {
+    return (
+      <table>
+        <thead>
+          <tr>
+            <th>Fecha de pesaje</th>
+            <th>Peso</th>
+          </tr>
+        </thead>
+        <tbody>
+          {Object.keys(pesos).map((key) => (
+            <tr key={key}>
+              <td>{pesos[key].Fecha}</td>
+              <td>{pesos[key].Peso}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    );
+  };
+
   return (
     <div>
-        {user ? (
-            <div>
-            <h1>Usuarios</h1>
-            <ul>
-              {usuarios.map((usuario) => (
-                <li key={usuario.id}>
-                  <p>Nombre: {usuario.Nombre}</p>
-                  <p>Apellido: {usuario.Apellido}</p>
-                  <p>Correo: {usuario.Correo}</p>
-                  <p>Peso: {usuario.Peso}</p>
-                </li>
-              ))}
-            </ul>
-          </div>
-        ) : (
-            <h1></h1>
-        )}
+      {user ? (
+        <div>
+          <h1>Usuario {user.displayName}</h1>
+          {usuarios.Pesos ? (
+            renderPesoTabla(usuarios.Pesos)
+          ) : (
+            <p>No hay datos de pesaje disponibles</p>
+          )}
+        </div>
+      ) : (
+        <h1>No hay usuario logueado</h1>
+      )}
     </div>
-);
-};  
-
-// Se intenta meter comprobacion de usuario, para que solo le muestre la info a alguien logeado, pero no se deja
+  );
+};
 
 export default DbTest;
