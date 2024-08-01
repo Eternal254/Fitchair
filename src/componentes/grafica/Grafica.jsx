@@ -1,6 +1,10 @@
 import React from 'react';
 import BasicLineChart from './BasicLineChart';
 import './graph.css';
+import '../auth/AuthContext';
+import '../../firebase/firebaseConfig';
+import { firebaseApp } from '../../firebase/firebaseConfig';
+
 
 function Grafica() {
     return (
