@@ -14,6 +14,7 @@ export function call_login_google(e) {
             const token = credential.accessToken;
             const user = result.user;
             console.log(user);
+            window.location.href = '/';
         })
         .catch((error) => {
             const errorCode = error.code;

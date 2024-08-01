@@ -1,0 +1,11 @@
+.pesos{
+    margin-left: 0;
+    text-align: center;
+}
+
+.custom-table {
+    margin-left: 10px;
+    margin: 0 auto; /* Centra la tabla dentro de su contenedor */
+    width: auto; /* Asegúrate de que la tabla no ocupe más ancho del necesario */
+  }
+  
