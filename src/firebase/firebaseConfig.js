@@ -9,15 +9,15 @@ import 'firebase/database';
 
 
 const firebaseConfig = {
-    apiKey: "AIzaSyBUUWDLvNj8dPhNdnNnnc8BNNx-mBKxJ18",
-    authDomain: "fitchair-675af.firebaseapp.com",
-    databaseURL: "https://fitchair-675af-default-rtdb.firebaseio.com",
-    projectId: "fitchair-675af",
-    storageBucket: "fitchair-675af.appspot.com",
-    messagingSenderId: "812126152242",
-    appId: "1:812126152242:web:a079b27b1f5a37f0467e2b",
-    measurementId: "G-DQ2G3YW64Y"
-};
+    apiKey: "AIzaSyBfpUToP-jJfRM3RFJwen7hf5LmR6ymDBI",
+    authDomain: "fitchair1.firebaseapp.com",
+    databaseURL: "https://fitchair1-default-rtdb.firebaseio.com",
+    projectId: "fitchair1",
+    storageBucket: "fitchair1.appspot.com",
+    messagingSenderId: "5764322017",
+    appId: "1:5764322017:web:205fe6459ea7c7a07b9da0",
+    measurementId: "G-CPFCPFESRC"
+  };
 
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
