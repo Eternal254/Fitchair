@@ -8,6 +8,7 @@ import { initializeApp } from 'firebase/app';
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
+// Funcion que maneja el cierre de sesion
 export const handleLogout = async () => {
     try {
         await signOut(auth);
@@ -106,6 +107,7 @@ export const Login = () => {
     }, [user]);
 
     return (
+        //Dependiendo de si el usuario esta iniciado o no se renderizan distintos contenidos
         <div>
             {user ? (
                 <div>

@@ -20,6 +20,8 @@ const DbTest = () => {
     });
   }, []);
 
+  //Funcion que crea y muestra una tabla con todos los pesos del usuario
+  // En funcion a la base de datos
   const renderPesoTabla = (pesos) => {
     return (
       <div className="hola">

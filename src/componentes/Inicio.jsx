@@ -39,7 +39,6 @@ const Inicio = () => {
                     <div>
                         <img className='imagen2' src={imagen5} alt="Imagen 5" />
                     </div>
-                    {/* Añade más imágenes según sea necesario */}
                 </Carousel>
             </div>
         </div>

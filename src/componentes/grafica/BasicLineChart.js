@@ -5,6 +5,8 @@ import { onValue, ref } from 'firebase/database';
 import { useAuth } from '../auth/AuthContext';
 import { app, database, firestore, storage, analytics, auth } from '../../firebase/firebaseConfig';
 
+
+//Funcion que crea y da forma a una grafica lineal
 export default function BasicLineChart() {
   const [fechas, setFechas] = useState([]);
   const [pesos, setPesos] = useState([]);
