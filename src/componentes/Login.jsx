@@ -127,6 +127,7 @@ export const Login = () => {
                             <div className="caja__trasera-register">
                                 <h3>¿Aún no tienes una cuenta?</h3>
                                 <p>Regístrate para que puedas iniciar sesión</p>
+                                
                                 <button id="btn__registrarse">Regístrarse</button>
                             </div>
                         </div>
@@ -144,7 +145,6 @@ export const Login = () => {
                                 <h2>Regístrarse</h2>
                                 <input type="text" placeholder="Nombre completo" />
                                 <input type="text" placeholder="Correo Electrónico" />
-                                <input type="text" placeholder="Usuario" />
                                 <input type="password" placeholder="Contraseña" />
                                 <button>Regístrarse</button>
                                 <button className='button-google' onClick={call_login_google}>Entrar con Google</button>

@@ -1,0 +1,62 @@
+.tabla {
+    background-color: aqua;
+    width: 90%;
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+    top: 10px;
+    border-radius: 15px;
+  }
+  
+  .titulo {
+    color: rgb(0, 0, 0);
+    text-align: center;
+  }
+  
+  .usuario {
+    color: rgb(0, 0, 0);
+    text-align: center;
+  }
+  
+  .fondo {
+    background-color: rgba(0, 255, 255, 0.7);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .fitchar, .fitchar2 {
+    position: relative;
+    text-align: center; /* Centra la imagen dentro del contenedor */
+    margin: 10px auto; /* Centra el contenedor horizontalmente y agrega un margen para separarlas */
+  }
+  
+  .grafica-container {
+    background-color: rgb(26, 163, 127); /* Fondo de la gráfica */
+    padding: 20px; /* Espaciado alrededor de la gráfica */
+    width: 90%;
+    max-width: 800px; /* Asegura que el contenedor ocupe el ancho máximo disponible */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Añade una sombra para darle estilo */
+    border-radius: 20px;
+    margin: 20px 0; /* Margen vertical para separar del contenido superior e inferior */
+  }
+  
+  /* Media query para pantallas más pequeñas */
+  @media (max-width: 768px) {
+    .fitchar, .fitchar2 {
+      margin: 0 auto; /* Centra las imágenes horizontalmente */
+      width: 90%; /* Ajusta el tamaño de las imágenes según el ancho de la pantalla */
+    }
+  
+    .grafica-container {
+      width: 100%; /* Asegura que el contenedor ocupe el 100% del ancho disponible */
+      padding: 10px; /* Reduce el espaciado alrededor de la gráfica */
+    }
+  
+    .tabla {
+      width: 100%; /* Asegura que la tabla ocupe el 100% del ancho disponible */
+      padding: 10px;
+    }
+  }
+  

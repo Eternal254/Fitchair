@@ -29,6 +29,7 @@
     width: 100%;   /* Ajusta el ancho al 100% del contenedor */
     max-width: 300px; /* Limita el ancho máximo de la imagen */
     height: auto;   /* Mantiene la proporción de la imagen */
+    border-radius: 1000px;
 }
 
 /* Media queries para adaptar el diseño en diferentes tamaños de pantalla */

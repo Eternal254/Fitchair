@@ -31,11 +31,9 @@ const Layout = () => {
                 <Link className="nav-link menu" to="Nosotros">Nosotros</Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link menu" to="/mytest">TestDB</Link>
+                <Link className="nav-link menu" to="/mytest">Mi perfil</Link>
               </li>
-              <li className="nav-item">
-                <Link className="nav-link menu" to="/graph">Grafica</Link>
-              </li>
+              
               <li className="nav-item">
                 <button className="nav-link menu" onClick={handleLogout}>Cerrar Sesión</button>
               </li>

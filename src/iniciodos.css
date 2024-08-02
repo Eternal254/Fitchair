@@ -1,0 +1,106 @@
+/* Fondo general de la página */
+body {
+    background-color: #e3f2fd; /* Fondo azul muy claro para todo el cuerpo */
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Animación de aparición */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Animación de escala al pasar el ratón */
+@keyframes scaleUp {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.05);
+    }
+}
+
+/* Animación de sombra de contenedor */
+@keyframes shadowPulse {
+    0% {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    50% {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    }
+    100% {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+}
+
+.inicio-container {
+    padding-top: 8px; /* Ajustado para hacer el contenedor más pequeño */
+    width: 80vw; /* Reducido el ancho del contenedor */
+    margin: 0 auto;
+    border-radius: 15px; /* Bordes redondeados más pequeños */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    animation: fadeIn 1s ease-in-out; /* Animación de aparición */
+}
+
+.div1 {
+    display: flex;
+    justify-content: center; /* Centra el contenido horizontalmente */
+    padding-top: 8px; /* Ajustado para hacer el contenedor más pequeño */
+    background: linear-gradient(135deg, #bcdcf3, #bcdcf3); /* Gradiente azul */
+    width: 30vw; /* Reducido el ancho del contenedor */
+    margin: 0 auto;
+    border-radius: 15px; /* Bordes redondeados más pequeños */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    animation: fadeIn 1s ease-in-out; /* Animación de aparición */
+}
+
+.inicio-image {
+    width: 90%; /* Reducido el ancho para hacer la imagen más pequeña */
+    height: auto; /* Mantiene la proporción de la imagen */
+    margin-bottom: 15px; /* Espacio reducido entre la imagen y el carrusel */
+    display: block;
+    border-radius: 15px; /* Aplica el mismo radio de borde reducido */
+    border: 2px solid #90caf9; /* Borde azul claro */
+    transition: transform 0.3s ease-in-out; /* Transición suave para el efecto de escala */
+}
+
+/* Efecto de escala en la imagen principal al pasar el ratón */
+.div1:hover .inicio-image {
+    animation: scaleUp 0.3s forwards; /* Animación de escala al pasar el ratón */
+}
+
+.carousel {
+    width: 90%; /* Reducido el ancho del carrusel */
+    border-radius: 15px; /* Bordes redondeados más pequeños */
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    animation: shadowPulse 3s infinite; /* Pulso de sombra */
+}
+
+/* Estilo para las imágenes en el carrusel */
+.carousel .slide img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 8px; /* Bordes redondeados para las imágenes del carrusel */
+    transition: transform 0.3s ease-in-out; /* Transición suave para el efecto de escala */
+}
+
+/* Efecto de escala en las imágenes del carrusel al pasar el ratón */
+.carousel .slide:hover img {
+    animation: scaleUp 0.3s forwards; /* Animación de escala al pasar el ratón */
+}
+
+/* Estilo específico para las imágenes en el carrusel */
+.carousel .slide img.imagen2,
+.carousel .slide img.imagen3 {
+    width: 350px; /* Ajustado el tamaño para que sea más pequeño */
+    display: block;
+    margin: 0 auto; /* Centra las imágenes en el carrusel */
+}
