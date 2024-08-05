@@ -1,12 +1,13 @@
 import { initializeApp } from 'firebase/app';
-import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged } from 'firebase/auth';
+import { getAuth, signInWithPopup, GoogleAuthProvider, createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
 import firebaseConfig from '../../firebase/firebaseConfig';
 
-const provider = new GoogleAuthProvider();
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
-//Funcion de firebase para autenticar con google
+const provider = new GoogleAuthProvider();
+
+// Función de Firebase para autenticar con Google
 export function call_login_google(e) {
     e.preventDefault();
     signInWithPopup(auth, provider)
@@ -24,4 +25,14 @@ export function call_login_google(e) {
             const credential = GoogleAuthProvider.credentialFromError(error);
             console.error(error);
         });
+}
+
+// Función para registrar un nuevo usuario con correo y contraseña
+export function registerWithEmailPassword(email, password) {
+    return createUserWithEmailAndPassword(auth, email, password);
+}
+
+// Función para iniciar sesión con correo y contraseña
+export function loginWithEmailPassword(email, password) {
+    return signInWithEmailAndPassword(auth, email, password);
 }

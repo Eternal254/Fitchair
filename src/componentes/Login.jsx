@@ -1,27 +1,31 @@
 import React, { useState, useEffect } from 'react';
 import { getAuth, onAuthStateChanged, signOut } from 'firebase/auth';
 import '../login.css';
-import { call_login_google } from './auth/Autent';
+import { call_login_google, registerWithEmailPassword, loginWithEmailPassword } from './auth/Autent';
 import firebaseConfig from '../firebase/firebaseConfig';
 import { initializeApp } from 'firebase/app';
+import imagen from "../imagenes/img_gogle.png";
+
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
-// Funcion que maneja el cierre de sesion
+// Función que maneja el cierre de sesión
 export const handleLogout = async () => {
     try {
         await signOut(auth);
         window.location.href = '/';
-        {console.log('Sesion cerrada')}
+        console.log('Sesión cerrada');
     } catch (error) {
         console.error('Error al cerrar sesión:', error);
     }
 };
 
-
 export const Login = () => {
     const [user, setUser] = useState(null);
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [error, setError] = useState('');
 
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (user) => {
@@ -34,6 +38,30 @@ export const Login = () => {
 
         return () => unsubscribe();
     }, []);
+
+    const handleRegister = async (e) => {
+        e.preventDefault();
+        setError('');
+        try {
+            await registerWithEmailPassword(email, password);
+            console.log('Usuario registrado');
+        } catch (error) {
+            console.error('Error al registrar usuario:', error);
+            setError('Usuario o contraseña incorrectos');
+        }
+    };
+
+    const handleLogin = async (e) => {
+        e.preventDefault();
+        setError('');
+        try {
+            await loginWithEmailPassword(email, password);
+            console.log('Usuario autenticado');
+        } catch (error) {
+            console.error('Error al iniciar sesión:', error);
+            setError('Usuario o contraseña incorrectos');
+        }
+    };
 
     useEffect(() => {
         if (!user) {
@@ -107,14 +135,13 @@ export const Login = () => {
     }, [user]);
 
     return (
-        //Dependiendo de si el usuario esta iniciado o no se renderizan distintos contenidos
         <div>
             {user ? (
                 <div>
                     <h2>Bienvenido, {user.displayName}</h2>
                     <p>Estás autenticado</p>
                     <button onClick={handleLogout}>Cerrar Sesión</button>
-                    {console.log('Sesion iniciada')}
+                    {console.log('Sesión iniciada')}
                     {console.log("User ID:", user.uid)}
                 </div>
             ) : (
@@ -129,27 +156,53 @@ export const Login = () => {
                             <div className="caja__trasera-register">
                                 <h3>¿Aún no tienes una cuenta?</h3>
                                 <p>Regístrate para que puedas iniciar sesión</p>
-                                
-                                <button id="btn__registrarse">Regístrarse</button>
+                                <button id="btn__registrarse">Registrarse</button>
                             </div>
                         </div>
 
                         <div className="contenedor__login-register">
-                            <form action="" className="formulario__login">
+                            <form className="formulario__login" onSubmit={handleLogin}>
                                 <h2>Iniciar Sesión</h2>
-                                <input type="text" placeholder="Correo Electrónico" />
-                                <input type="password" placeholder="Contraseña" />
-                                <button>Entrar</button>
-                                <button className='button-google' onClick={call_login_google}>Entrar con Google</button>
+                                <input 
+                                    type="text" 
+                                    placeholder="Correo Electrónico" 
+                                    value={email}
+                                    onChange={(e) => setEmail(e.target.value)} 
+                                />
+                                <input 
+                                    type="password" 
+                                    placeholder="Contraseña" 
+                                    value={password}
+                                    onChange={(e) => setPassword(e.target.value)} 
+                                />
+                                <button type="submit">Entrar</button>
+                                <button className='button-google' onClick={call_login_google}>
+                                    <img src={imagen} alt="Google icon" className="google-icon" />
+                                    Entrar con Google
+                                </button>
+                                {error && <p className="error">{error}</p>}
                             </form>
 
-                            <form action="" className="formulario__register">
-                                <h2>Regístrarse</h2>
-                                <input type="text" placeholder="Nombre completo" />
-                                <input type="text" placeholder="Correo Electrónico" />
-                                <input type="password" placeholder="Contraseña" />
-                                <button>Regístrarse</button>
-                                <button className='button-google' onClick={call_login_google}>Entrar con Google</button>
+                            <form className="formulario__register" onSubmit={handleRegister}>
+                                <h2>Registrarse</h2>
+                                <input 
+                                    type="text" 
+                                    placeholder="Correo Electrónico" 
+                                    value={email}
+                                    onChange={(e) => setEmail(e.target.value)} 
+                                />
+                                <input 
+                                    type="password" 
+                                    placeholder="Contraseña" 
+                                    value={password}
+                                    onChange={(e) => setPassword(e.target.value)} 
+                                />
+                                <button type="submit">Registrarse</button>
+                                <button className='button-google' onClick={call_login_google}>
+                                    <img src= {imagen} alt="Google icon" className="google-icon" />
+                                    Entrar con Google
+                                </button>
+                                {error && <p className="error">{error}</p>}
                             </form>
                         </div>
                     </div>

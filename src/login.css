@@ -38,6 +38,7 @@ main{
     backdrop-filter: blur(10px);
     background-color: rgba(0, 128, 255, 0.5);
     border-radius: 16px;
+    
 
 }
 
@@ -76,11 +77,15 @@ main{
     color: white;
     outline: none;
     transition: all 300ms;
+    border-radius: 16px;
+
 }
 
 .caja__trasera button:hover{
     background: #fff;
     color: #46A2FD;
+
+    
 }
 
 /*Formularios*/
@@ -93,6 +98,7 @@ main{
     position: relative;
     top: -185px;
     left: 10px;
+
 
 
     /*La transicion va despues del codigo JS*/
@@ -114,6 +120,8 @@ main{
     margin-bottom: 20px;
     color: #46A2FD;
 
+
+
 }
 
 .contenedor__login-register form input{
@@ -124,6 +132,7 @@ main{
     background: #F2F2F2;
     font-size: 16px;
     outline: none;
+    
 
 }
 
@@ -137,6 +146,8 @@ main{
     cursor: pointer;
     color: white;
     outline: none;
+    border-radius: 16px;
+
 
 }
 
@@ -190,4 +201,22 @@ main{
         position: relative;
         
     }
+}
+.error {
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+}
+.button-google {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 16px;
+
+}
+
+.google-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
 }
