@@ -5,8 +5,7 @@ import { onValue, ref } from 'firebase/database';
 import { useAuth } from '../auth/AuthContext';
 import { app, database, firestore, storage, analytics, auth } from '../../firebase/firebaseConfig';
 
-
-//Funcion que crea y da forma a una grafica lineal
+// Función que crea y da forma a una gráfica lineal
 export default function BasicLineChart() {
   const [fechas, setFechas] = useState([]);
   const [pesos, setPesos] = useState([]);
@@ -23,10 +22,11 @@ export default function BasicLineChart() {
 
         Object.values(data.Pesos).forEach((peso) => {
           // Convertir la fecha de string a objeto Date
-          const [day, month, year] = peso.Fecha.split('-');
+          const [fechaString] = peso.fecha.split(' '); // Separar fecha y hora
+          const [year, month, day] = fechaString.split('-');
           const dateObj = new Date(year, month - 1, day);
           fechasArray.push(dateObj);
-          pesosArray.push(peso.Peso);
+          pesosArray.push(parseFloat(peso.valor)); // Convertir el valor a número
         });
 
         const sortedData = fechasArray

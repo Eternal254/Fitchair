@@ -49,8 +49,8 @@ const DbTest = () => {
         <tbody>
           {Object.keys(pesos).map((key) => (
             <tr key={key}>
-              <td>{pesos[key].Fecha}</td>
-              <td>{pesos[key].Peso} kg</td>
+              <td>{pesos[key].fecha}</td>
+              <td>{pesos[key].valor} kg</td>
             </tr>
           ))}
         </tbody>
